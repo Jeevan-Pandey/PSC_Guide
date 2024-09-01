@@ -1,3 +1,4 @@
+/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
@@ -5,37 +6,150 @@
     font-family: Arial, sans-serif;
 }
 
+/* Body */
 body {
+    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    padding: 60px;
 }
 
+/* Header */
 header {
     background-color: #008080;
     color: white;
     padding: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-header .logo {
+/* Logo */
+.logo {
     font-size: 24px;
     font-weight: bold;
 }
 
+/* Navigation */
 nav ul {
     list-style-type: none;
+    display: flex;
+    flex-wrap: wrap; /* Added for responsiveness */
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
+    position: relative;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease-in-out;
 }
 
+nav ul li a:hover {
+    background-color: #ff6600;
+    border-radius: 5px;
+}
+
+/* Auth Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Slide Form */
+.slide-form {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    overflow: auto;
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+    height: 40px;
+}
+
+.form-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.close-sign {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+    color: #ff6600;
+    transition: color 0.3s ease-in-out;
+}
+
+.close-sign:hover {
+    color: #cc5200;
+}
+
+/* Slide Form Inputs */
+.slide-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.slide-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.slide-form button {
+    background-color: #008080;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.slide-form button[type="button"] {
+    background-color: #ff6600; /* Signature orange color for button type="button" */
+}
+
+/* Hero Section */
 .hero {
     position: relative;
     height: 400px;
@@ -55,7 +169,7 @@ nav ul li a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.5; /* Adjust the opacity to make text more readable */
+    opacity: 0.5;
 }
 
 .hero-content {
@@ -82,7 +196,40 @@ nav ul li a {
     border-radius: 5px;
 }
 
+/* Information section */
+.info-box {
+    background-color: #009999; /* Slightly lighter cyan color */
+    color: white;
+    font-size: 30px; /* Slightly smaller than the hero section text */
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Larger height */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
+.info-text {
+    flex: 1;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 30px;
+    color: #ff6600; /* Signature orange color */
+    margin: 0 20px;
+}
+
+.arrow:hover {
+    color: #cc5200; /* Darker shade of orange on hover */
+}
+
+
+/* Categories Section */
 .categories {
     padding: 50px 20px;
     text-align: center;
@@ -120,6 +267,7 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* News and Updates Section */
 .news-updates {
     background-color: #fff;
     padding: 50px 20px;
@@ -137,10 +285,139 @@ nav ul li a {
     border-bottom: 1px solid #ccc;
 }
 
+/* Footer */
 footer {
     background-color: #333;
     color: white;
     padding: 15px;
     text-align: center;
     margin-top: 20px;
+}
+
+/* Notice Section */
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.notices-section {
+    flex: 2; /* Takes up 2/3 of the width */
+}
+
+.sidebar {
+    flex: 1; /* Takes up 1/3 of the width */
+    background-color: #e0f7fa; /* Slightly lighter cyan */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+.search-filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-category {
+    display: flex;
+    align-items: center;
+}
+
+#searchInput {
+    flex: 1; /* Makes the search box fill available space */
+    padding: 10px;
+}
+
+#categorySelect, #rowsPerPage {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#noticesTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+#noticesTable th, #noticesTable td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+@media (max-width: 768px) {
+    #noticesTable th, #noticesTable td {
+        padding: 10px;
+    }
+}
+
+#noticesTable th {
+    background-color: #008080;
+    color: white;
+}
+
+#noticesTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Pagination Controls */
+#paginationControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#paginationControls button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #008080;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+#paginationControls button:hover {
+    background-color: #ff6600;
+}
+
+#paginationControls span {
+    margin: 0 10px;
+    font-weight: bold;
+}
+.sidebar h3 {
+    margin-bottom: 15px;
+    color: #008080; /* Signature cyan color */
+}
+
+.sidebar ol {
+    padding-left: 20px;
+}
+
+.sidebar ol li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #008080; /* Signature cyan color */
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+@media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
 }

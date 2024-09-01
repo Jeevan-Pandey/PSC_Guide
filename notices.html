@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices - PSC Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">PSC Guide</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="notices.html">Notices</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button id="registerButton">Register</button>
+            <button id="signinButton">Sign In</button>
+        </div>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="notices-section">
+            <div class="search-filter-container">
+                <input type="text" id="searchInput" placeholder="Search notices...">
+                <select id="categorySelect">
+                    <option value="all">All</option>
+                    <option value="advertisement">Advertisement</option>
+                    <option value="exam-center">Exam Center</option>
+                    <option value="result">Result</option>
+                    <!-- Add more categories as needed -->
+                </select>
+                <select id="rowsPerPage">
+                    <option value="10">10 per page</option>
+                    <option value="25">25 per page</option>
+                    <option value="100">100 per page</option>
+                </select>
+            </div>
+
+            <div class="notices-table">
+                <table id="noticesTable">
+                    <thead>
+                        <tr>
+                            <th>S.N.</th>
+                            <th>Notice</th>
+                            <th>Date</th>
+                            <th>Download</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be populated here -->
+                    </tbody>
+                </table>
+                <div id="paginationControls">
+                    <button id="prevPageBtn">Previous</button>
+                    <span id="currentPage">Page 1</span>
+                    <button id="nextPageBtn">Next</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sidebar">
+            <h3>Highlighted Notices</h3>
+            <ol>
+                <li><a href="#">Notice 1 - Brief description or details.</a></li>
+                <li><a href="#">Notice 2 - Brief description or details.</a></li>
+                <li><a href="#">Notice 3 - Brief description or details.</a></li>
+                <!-- Add more notices as needed -->
+            </ol>
+            <h3>Latest News</h3>
+            <ol>
+                <li><a href="#">News 1 - Brief description or details.</a></li>
+                <li><a href="#">News 2 - Brief description or details.</a></li>
+                <li><a href="#">News 3 - Brief description or details.</a></li>
+                <!-- Add more news items as needed -->
+            </ol>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 PSC-Guides. All Rights Reserved.</p>
+    </footer>
+    <script src="notice_script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
